@@ -27,3 +27,7 @@ jobs:
                 pull_number: context.payload.pull_request.number,
               });
             }
+
+
+with: 
+  message: "Your PR has been merged. Thank you for your contribution to the project. :tada:"
