@@ -1,16 +1,26 @@
-# Create a workflow to add a label to an issue when it is opened
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
 
-name: Add label to new issues
+# GitHub recommends pinning actions to a commit SHA.
+# To get a newer version, you will need to update the SHA.
+# You can also reference a tag or branch, but the action may change without warning.
 
+name: Label issues
 on:
   issues:
-    types: [opened]
-
+    types:
+      - reopened
+      - opened
 jobs:
-  add_label_to_new_issue:
+  label_issues:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
-      - uses: actions/labeler@v2
+      - name: Label issues
+        uses: andymckay/labeler@e6c4322d0397f3240f0e7e30a33b5c5df2d39e90
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          labels: "invalid"
+          add-labels: "enhancement"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
