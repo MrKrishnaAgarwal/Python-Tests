@@ -1,9 +1,7 @@
-24 lines (23 sloc)  939 Bytes
-
 on:
   fork:
   push:
-    branches: [main]
+    branches: [develop]
   issues:
     types: [opened]
   issue_comment:
@@ -21,6 +19,6 @@ jobs:
       - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: "Hey" ${{github.actor}} "Hi"
-          pr-message: "Hey" ${{github.actor}} "Hi"
-          footer: "Soon one of our maintainers will review it and provide you with feedback/suggestions. If you think it's something urgent, feel free to reach out <a href='https://twitter.com/pradumna_saraf'>Pradumna Saraf</a> on <b>Twitter</b>. Star ⭐ this repo to show us support.</b><br><br><b>Happy, Open Source!</b>"
+          issue-message: 'Hey ${{ github.actor }} ,Welcome to this repo, Congratulations on opening your issue. Keep Contributing'
+          pr-message: 'Hey, Welcome to this repo, Congratulations on opening your Pull Requests. Keep Contributing'
+          footer: '<h4>Meanwhile, You can also Follow me on <a href="https://github.com/MrKrishnaAgarwal">GitHub</a>, and <a href="https://twitter.com/DMKrishnaA">Twitter</a> also Feel free to checkout my other cool <a href="https://github.com/MrKrishnaAgarwal?tab=repositories">repositories</a> and <a href="https://dev.to/krishnaagarwal">articles</a></h4>'
